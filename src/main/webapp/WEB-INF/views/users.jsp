@@ -12,6 +12,7 @@
 </head>
 <body>
     This is user page!
+    ${user}
     <h2><a href="/edit">edit</a></h2>
 </body>
 </html>
