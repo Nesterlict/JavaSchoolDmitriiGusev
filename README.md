@@ -1,3 +1,3 @@
 # JavaSchoolDmitriiGusev
 
-eCare project
+ecare project
