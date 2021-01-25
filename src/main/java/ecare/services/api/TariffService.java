@@ -18,7 +18,7 @@ public interface TariffService extends GenericService<Tariff, Integer> {
      * @param title entity for getting
      * @return tariff entity
      */
-    public Tariff getTariffByTitle(String title);
+    public Tariff getTariffByName(String title);
 
     /**
      * Checking contract existing in base

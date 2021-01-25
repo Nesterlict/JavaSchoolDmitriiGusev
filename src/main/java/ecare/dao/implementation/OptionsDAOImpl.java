@@ -29,7 +29,7 @@ public class OptionsDAOImpl extends GenericDAOImpl<Options, Integer> implements 
      * @throws OptionsForEntityNotGotException if option not found
      */
     @Override
-    public List<Options> getAllTariffOptionsForTariff(int id) throws OptionsForEntityNotGotException {
+    public List<Options> getAllOptionsForTariff(int id) throws OptionsForEntityNotGotException {
         try {
             Query query = entityManager.createQuery("select t.tariffId from Tariff t where t.tariffId=:id").setParameter("id", id);
 
@@ -47,7 +47,7 @@ public class OptionsDAOImpl extends GenericDAOImpl<Options, Integer> implements 
      * @throws OptionsForEntityNotGotException if option not found
      */
     @Override
-    public List<Options> getAllTariffOptionsForContract(int id) throws OptionsForEntityNotGotException {
+    public List<Options> getAllOptionsForContract(int id) throws OptionsForEntityNotGotException {
         try {
             Query query = entityManager.createQuery("select c.usedOptions from Contract c where c.contractID=:id").setParameter("id", id);
 
@@ -65,7 +65,7 @@ public class OptionsDAOImpl extends GenericDAOImpl<Options, Integer> implements 
      * @throws OptionsForEntityNotGotException if option not found
      */
     @Override
-    public List<Options> getAllJointTariffOptions(int id) throws OptionsForEntityNotGotException {
+    public List<Options> getAllRequiredOptions(int id) throws OptionsForEntityNotGotException {
         try {
             Query query = entityManager.createQuery("select opt.connectionPrice from Options opt");
 
@@ -83,7 +83,7 @@ public class OptionsDAOImpl extends GenericDAOImpl<Options, Integer> implements 
      * @throws OptionsForEntityNotGotException if option not found
      */
     @Override
-    public List<Options> getAllImpossibleTariffOptions(int id) throws OptionsForEntityNotGotException {
+    public List<Options> getAllExclusiveOptions(int id) throws OptionsForEntityNotGotException {
         try {
             Query query = entityManager.createQuery("select opt.exclusiveOptions from Options opt");
 
@@ -99,7 +99,7 @@ public class OptionsDAOImpl extends GenericDAOImpl<Options, Integer> implements 
      * @param name entity for getting
      * @return title of tariff option
      */
-    public Options getTariffOptionByTitle(String name) {
+    public Options getOptionsByName(String name) {
         try {
             Query query = entityManager.createQuery("select t from Options t where t.name=:name")
                     .setParameter("name", name);

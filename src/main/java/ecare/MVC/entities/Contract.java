@@ -50,13 +50,11 @@ public class Contract {
     public Contract() {
     }
 
-    public Contract(int contractID, String phoneNumber, String status, User user, Tariff tariff, Set<Options> usedOptions) {
-        this.contractID = contractID;
+    public Contract(String phoneNumber, String status, User user, Tariff tariff) {
         this.phoneNumber = phoneNumber;
         this.status = status;
         this.user = user;
         this.tariff = tariff;
-        this.usedOptions = usedOptions;
     }
 
     public int getContractID() {
@@ -94,12 +92,10 @@ public class Contract {
     @Override
     public String toString() {
         return "Contract{" +
-                "contractID=" + contractID +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", status=" + status +
+                "phoneNumber='" + phoneNumber + '\'' +
+                ", status='" + status + '\'' +
                 ", user=" + user +
                 ", tariff=" + tariff +
-                ", usedOptions=" + usedOptions +
                 '}';
     }
 

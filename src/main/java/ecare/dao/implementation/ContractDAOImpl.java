@@ -24,8 +24,8 @@ public class ContractDAOImpl extends GenericDAOImpl<Contract, Integer> implement
     @Override
     public Contract getContractByNumber(String phoneNumber) throws ContractNotFoundException {
         try {
-            return (Contract) entityManager.createQuery("select c from Contract c where c.phoneNumber=:number")
-                    .setParameter("number", phoneNumber).getSingleResult();
+            return (Contract) entityManager.createQuery("select c from Contract c where c.phoneNumber=:phone_number")
+                    .setParameter("phone_number", phoneNumber).getSingleResult();
         } catch (PersistenceException e) {
             throw new ContractNotFoundException("Contract " + phoneNumber + " wasn't gotten", e);
         }

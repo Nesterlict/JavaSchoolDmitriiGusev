@@ -22,16 +22,16 @@ public class TariffDAOImpl extends GenericDAOImpl<Tariff, Integer> implements Ta
     /**
      * Getting tariff entity by number
      *
-     * @param title entity for getting
+     * @param name entity for getting
      * @return tariff with adjusted number
      */
-    public Tariff getTariffByTitle(String title) {
+    public Tariff getTariffByName(String name) {
         try {
-            Query query = entityManager.createQuery("select t from Tariff t where t.name=:title")
-                    .setParameter("title", title);
+            Query query = entityManager.createQuery("select t from Tariff t where t.name=:name")
+                    .setParameter("name", name);
             return (Tariff) query.getResultList().get(0);
         } catch (PersistenceException ex) {
-            throw new UserNotFoundException("Tariff with title " + title + " not found!", ex);
+            throw new UserNotFoundException("Tariff with title " + name + " not found!", ex);
         }
     }
 }

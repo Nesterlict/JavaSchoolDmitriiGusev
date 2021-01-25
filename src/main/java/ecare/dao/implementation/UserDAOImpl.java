@@ -2,7 +2,6 @@ package ecare.dao.implementation;
 
 import ecare.dao.api.UserDAO;
 import ecare.MVC.entities.User;
-import ecare.dao.implementation.GenericDAOImpl;
 import ecare.exceptions.UserNotFoundException;
 import org.springframework.stereotype.Repository;
 

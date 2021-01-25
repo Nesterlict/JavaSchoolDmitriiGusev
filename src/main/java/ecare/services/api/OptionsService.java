@@ -3,12 +3,13 @@ package ecare.services.api;
 
 import ecare.MVC.entities.Options;
 import ecare.exceptions.OptionsForEntityNotGotException;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.util.List;
 
 
 /**
- * Interface for TariffOptionService
+ * Interface for OptionsService
  */
 public interface OptionsService extends GenericService<Options, Integer> {
 
@@ -19,7 +20,7 @@ public interface OptionsService extends GenericService<Options, Integer> {
      * @return list of all option for tariff
      * @throws OptionsForEntityNotGotException if option not found
      */
-    public List<Options> getAllTariffOptions(int id) throws OptionsForEntityNotGotException;
+    public List<Options> getAllOptions(int id) throws OptionsForEntityNotGotException;
 
     /**
      * Getting tariff option for current contract
@@ -28,7 +29,7 @@ public interface OptionsService extends GenericService<Options, Integer> {
      * @return list of all options for contract
      * @throws OptionsForEntityNotGotException if option not found
      */
-    public List<Options> getAllTariffOptionForContract(int id) throws OptionsForEntityNotGotException;
+    public List<Options> getAllOptionsForContract(int id) throws OptionsForEntityNotGotException;
 
     /**
      * Getting joint tariff options
@@ -37,7 +38,7 @@ public interface OptionsService extends GenericService<Options, Integer> {
      * @return list of all joint options
      * @throws OptionsForEntityNotGotException if option not found
      */
-    public List<Options> getAllJoinedTariffOption(int id) throws OptionsForEntityNotGotException;
+    public List<Options> getAllRequiredOptions(int id) throws OptionsForEntityNotGotException;
 
     /**
      * Getting impossible tariff options
@@ -46,5 +47,5 @@ public interface OptionsService extends GenericService<Options, Integer> {
      * @return list of all impossible options
      * @throws OptionsForEntityNotGotException if option not found
      */
-    public List<Options> getAllImpossibleTariffOption(int id) throws OptionsForEntityNotGotException;
+    public List<Options> getAllExclusiveOptions(int id) throws OptionsForEntityNotGotException;
 }

@@ -142,8 +142,7 @@ public class User {
     public User() {
     }
 
-    public User(int userId, String name, String surname, Date birthdate, String passport, String address, String email, BigDecimal balance, String password, String accessLevel) {
-        this.userId = userId;
+    public User(String name, String surname, Date birthdate, String passport, String address, String email, BigDecimal balance, String password, String accessLevel) {
         this.name = name;
         this.surname = surname;
         this.birthdate = birthdate;
@@ -158,8 +157,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", birthdate=" + birthdate +
                 ", passport='" + passport + '\'' +
@@ -168,7 +166,6 @@ public class User {
                 ", balance=" + balance +
                 ", password='" + password + '\'' +
                 ", accessLevel='" + accessLevel + '\'' +
-                ", contracts=" + contracts +
                 '}';
     }
 

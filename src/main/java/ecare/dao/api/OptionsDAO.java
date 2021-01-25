@@ -19,7 +19,7 @@ public interface OptionsDAO extends GenericDAO<Options, Integer> {
      * @return list of all tariff option for tariff
      * @throws OptionsForEntityNotGotException if option not found
      */
-    public List<Options> getAllTariffOptionsForTariff(int id) throws OptionsForEntityNotGotException;
+    public List<Options> getAllOptionsForTariff(int id) throws OptionsForEntityNotGotException;
 
     /**
      * Getting tariff list for adjusted contract
@@ -28,7 +28,7 @@ public interface OptionsDAO extends GenericDAO<Options, Integer> {
      * @return list of all contracts for adjusted contract
      * @throws OptionsForEntityNotGotException if option not found
      */
-    public List<Options> getAllTariffOptionsForContract(int id) throws OptionsForEntityNotGotException;
+    public List<Options> getAllOptionsForContract(int id) throws OptionsForEntityNotGotException;
 
     /**
      * Getting all joint tariffs
@@ -37,7 +37,7 @@ public interface OptionsDAO extends GenericDAO<Options, Integer> {
      * @return list of joint option
      * @throws OptionsForEntityNotGotException if option not found
      */
-    public List<Options> getAllJointTariffOptions(int id) throws OptionsForEntityNotGotException;
+    public List<Options> getAllRequiredOptions(int id) throws OptionsForEntityNotGotException;
 
     /**
      * Getting all joint tariffs
@@ -46,15 +46,15 @@ public interface OptionsDAO extends GenericDAO<Options, Integer> {
      * @return list of impossible option
      * @throws OptionsForEntityNotGotException if option not found
      */
-    public List<Options> getAllImpossibleTariffOptions(int id) throws OptionsForEntityNotGotException;
+    public List<Options> getAllExclusiveOptions(int id) throws OptionsForEntityNotGotException;
 
     /**
      * Getting tariff option by title
      *
-     * @param title entity for getting
-     * @return title of tariff option
+     * @param name entity for getting
+     * @return name of tariff option
      */
-    public Options getTariffOptionByTitle(String title);
+    public Options getOptionsByName(String name);
 
 
 }

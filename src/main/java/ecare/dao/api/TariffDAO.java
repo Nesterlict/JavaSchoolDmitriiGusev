@@ -13,5 +13,5 @@ public interface TariffDAO extends GenericDAO<Tariff, Integer> {
      * @param title entity for getting
      * @return tariff with adjusted number
      */
-    public Tariff getTariffByTitle(String title);
+    public Tariff getTariffByName(String title);
 }
