@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * tariff entity class
+ * Tariff entity class
  */
 @Entity
 @Table(name  = "tariff")

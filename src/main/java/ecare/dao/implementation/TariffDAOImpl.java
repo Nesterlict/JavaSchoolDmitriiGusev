@@ -12,7 +12,7 @@ import javax.persistence.Query;
 
 
 /**
- * Access to tariff functionality
+ * Tariff operations
  */
 @Repository("Tariff")
 public class TariffDAOImpl extends GenericDAOImpl<Tariff, Integer> implements TariffDAO {
@@ -20,10 +20,10 @@ public class TariffDAOImpl extends GenericDAOImpl<Tariff, Integer> implements Ta
     private EntityManager entityManager;
 
     /**
-     * Getting tariff entity by number
+     * Getting tariff entity by name
      *
      * @param name entity for getting
-     * @return tariff with adjusted number
+     * @return tariff with adjusted name
      */
     public Tariff getTariffByName(String name) {
         try {

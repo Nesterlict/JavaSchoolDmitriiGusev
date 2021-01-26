@@ -4,6 +4,9 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.*;
 
+/**
+ * Options entity class
+ */
 @Entity
 @Table(name = "options")
 public class Options {

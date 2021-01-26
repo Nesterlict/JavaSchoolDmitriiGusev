@@ -10,7 +10,10 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 
-@Repository("userDAO")
+/**
+ * User operations
+ */
+@Repository("User")
 public class UserDAOImpl extends GenericDAOImpl<User, Integer> implements UserDAO {
     @PersistenceContext
     private EntityManager entityManager;
@@ -19,7 +22,7 @@ public class UserDAOImpl extends GenericDAOImpl<User, Integer> implements UserDA
      * Getting user entity by number
      *
      * @param number entity for getting
-     * @return user with adjusted number
+     * @return user with selected number
      * @throws UserNotFoundException if user not found
      */
 
@@ -39,7 +42,7 @@ public class UserDAOImpl extends GenericDAOImpl<User, Integer> implements UserDA
      * Getting user entity by email
      *
      * @param email entity for getting
-     * @return user with adjusted number
+     * @return user with selected number
      * @throws UserNotFoundException if user not found
      */
     @Override

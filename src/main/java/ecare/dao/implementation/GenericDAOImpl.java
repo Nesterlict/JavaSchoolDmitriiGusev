@@ -9,7 +9,12 @@ import javax.persistence.PersistenceException;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
-
+/**
+ * Generic Operations
+ *
+ * @param <E> entity type
+ * @param <K> entity id type
+ */
 public abstract class GenericDAOImpl<E, K> implements GenericDAO<E, K> {
     protected Class<E> daoType;
 

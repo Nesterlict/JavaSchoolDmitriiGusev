@@ -14,18 +14,18 @@ import java.util.List;
 
 
 /**
- * Access to tariff option functionality
+ * Access to options functionality
  */
-@Repository("TariffOption")
+@Repository("Options")
 public class OptionsDAOImpl extends GenericDAOImpl<Options, Integer> implements OptionsDAO {
     @PersistenceContext
     private EntityManager entityManager;
 
     /**
-     * Getting tariff option list of adjusted tariff
+     * Getting options list of selected tariff
      *
-     * @param id entity for getting
-     * @return list of all tariff option for tariff
+     * @param id entity for getting options
+     * @return list of all options for tariff
      * @throws OptionsForEntityNotGotException if option not found
      */
     @Override
@@ -40,10 +40,10 @@ public class OptionsDAOImpl extends GenericDAOImpl<Options, Integer> implements 
     }
 
     /**
-     * Getting tariff list for adjusted contract
+     * Getting tariff list for selected contract
      *
-     * @param id entity for getting
-     * @return list of all contracts for adjusted contract
+     * @param id entity for getting options
+     * @return list of all contracts for selected contract
      * @throws OptionsForEntityNotGotException if option not found
      */
     @Override
@@ -58,10 +58,10 @@ public class OptionsDAOImpl extends GenericDAOImpl<Options, Integer> implements 
     }
 
     /**
-     * Getting all joint tariffs
+     * Getting all required options
      *
-     * @param id id for getting
-     * @return list of joint option
+     * @param id id for getting options
+     * @return list of required options
      * @throws OptionsForEntityNotGotException if option not found
      */
     @Override
@@ -76,10 +76,10 @@ public class OptionsDAOImpl extends GenericDAOImpl<Options, Integer> implements 
     }
 
     /**
-     * Getting all joint tariffs
+     * Getting all exclusive options
      *
-     * @param id if for getting
-     * @return list of impossible option
+     * @param id if for getting options
+     * @return list of impossible options
      * @throws OptionsForEntityNotGotException if option not found
      */
     @Override
@@ -94,10 +94,10 @@ public class OptionsDAOImpl extends GenericDAOImpl<Options, Integer> implements 
     }
 
     /**
-     * Getting tariff option by title
+     * Getting tariff option by name
      *
-     * @param name entity for getting
-     * @return title of tariff option
+     * @param name entity for getting option
+     * @return name of option
      */
     public Options getOptionsByName(String name) {
         try {

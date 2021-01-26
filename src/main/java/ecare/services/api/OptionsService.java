@@ -14,7 +14,7 @@ import java.util.List;
 public interface OptionsService extends GenericService<Options, Integer> {
 
     /**
-     * Getting tariff option for current tariff
+     * Getting options for current tariff
      *
      * @param id id for getting
      * @return list of all option for tariff
@@ -23,7 +23,7 @@ public interface OptionsService extends GenericService<Options, Integer> {
     public List<Options> getAllOptions(int id) throws OptionsForEntityNotGotException;
 
     /**
-     * Getting tariff option for current contract
+     * Getting option for current contract
      *
      * @param id if for getting
      * @return list of all options for contract
@@ -32,7 +32,7 @@ public interface OptionsService extends GenericService<Options, Integer> {
     public List<Options> getAllOptionsForContract(int id) throws OptionsForEntityNotGotException;
 
     /**
-     * Getting joint tariff options
+     * Getting required tariff options
      *
      * @param id id for getting
      * @return list of all joint options
@@ -41,7 +41,7 @@ public interface OptionsService extends GenericService<Options, Integer> {
     public List<Options> getAllRequiredOptions(int id) throws OptionsForEntityNotGotException;
 
     /**
-     * Getting impossible tariff options
+     * Getting exclusive tariff options
      *
      * @param id id for getting
      * @return list of all impossible options

@@ -8,7 +8,7 @@ import ecare.MVC.entities.Tariff;
  */
 public interface TariffDAO extends GenericDAO<Tariff, Integer> {
     /**
-     * Getting tariff entity by number
+     * Getting tariff entity by name
      *
      * @param name entity for getting
      * @return tariff with adjusted number

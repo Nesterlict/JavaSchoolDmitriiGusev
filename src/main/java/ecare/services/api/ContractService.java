@@ -17,7 +17,7 @@ public interface ContractService extends GenericService<Contract, Integer> {
      * Getting contract entity by number
      *
      * @param number number for getting
-     * @return contract with adjusted number
+     * @return contract with selected number
      * @throws ContractNotFoundException if contract not found
      */
     public Contract getContractByNumber(String number) throws ContractNotFoundException;

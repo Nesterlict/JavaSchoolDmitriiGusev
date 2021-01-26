@@ -8,12 +8,12 @@ import java.util.List;
 
 
 /**
- * Interface for TariffOptionDAO
+ * Interface for OptionsDAO
  */
 public interface OptionsDAO extends GenericDAO<Options, Integer> {
 
     /**
-     * Getting tariff option list of adjusted tariff
+     * Getting options list of adjusted tariff
      *
      * @param id entity for getting
      * @return list of all tariff option for tariff
@@ -40,7 +40,7 @@ public interface OptionsDAO extends GenericDAO<Options, Integer> {
     public List<Options> getAllRequiredOptions(int id) throws OptionsForEntityNotGotException;
 
     /**
-     * Getting all joint tariffs
+     * Getting all impossible options
      *
      * @param id if for getting
      * @return list of impossible option
@@ -49,7 +49,7 @@ public interface OptionsDAO extends GenericDAO<Options, Integer> {
     public List<Options> getAllExclusiveOptions(int id) throws OptionsForEntityNotGotException;
 
     /**
-     * Getting tariff option by title
+     * Getting tariff option by name
      *
      * @param name entity for getting
      * @return name of tariff option

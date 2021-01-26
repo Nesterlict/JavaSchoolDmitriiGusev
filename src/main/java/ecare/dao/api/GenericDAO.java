@@ -4,8 +4,13 @@ import ecare.exceptions.CustomDAOException;
 
 import java.util.List;
 
-
+/**
+ * Generic Interface for base crud operations
+ * @param <E> entity type
+ * @param <K> id type
+ */
 public interface GenericDAO<E, K> {
+
 
     public void create(E entity) throws CustomDAOException;
 

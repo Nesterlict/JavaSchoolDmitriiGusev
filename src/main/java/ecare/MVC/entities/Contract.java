@@ -3,6 +3,9 @@ package ecare.MVC.entities;
 import javax.persistence.*;
 import java.util.*;
 
+/**
+ * Contract entity class
+ */
 @Entity
 @Table(name = "contract")
 public class Contract {

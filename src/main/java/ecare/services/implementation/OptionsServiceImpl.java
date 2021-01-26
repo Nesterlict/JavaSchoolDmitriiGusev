@@ -13,14 +13,14 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 
-@Service("tariffOptionService")
+@Service("optionsService")
 public class OptionsServiceImpl implements OptionsService {
 
     @Autowired
     private OptionsDAO optionDAO;
 
     /**
-     * Creating tariff option entity in base
+     * Creating option entity in base
      *
      * @param option entity for creating
      * @throws CustomDAOException if connect with DAO goes wrong
@@ -33,7 +33,7 @@ public class OptionsServiceImpl implements OptionsService {
     }
 
     /**
-     * Getting tariff option entity by id
+     * Getting option entity by id
      *
      * @param id id for getting
      * @return tariff option with adjusted id
@@ -46,7 +46,7 @@ public class OptionsServiceImpl implements OptionsService {
     }
 
     /**
-     * Update tariff option entity in base
+     * Update option entity in base
      *
      * @param option entity for updating
      * @throws CustomDAOException if connect with DAO goes wrong
@@ -58,7 +58,7 @@ public class OptionsServiceImpl implements OptionsService {
     }
 
     /**
-     * Deleting tariff option entity from base
+     * Deleting option entity from base
      *
      * @param option entity for deleting
      * @throws CustomDAOException if connect with DAO goes wrong
@@ -70,7 +70,7 @@ public class OptionsServiceImpl implements OptionsService {
     }
 
     /**
-     * getting all tariff option entity from base
+     * getting all options entity from base
      *
      * @return list of all tariff option
      * @throws CustomDAOException if connect with DAO goes wrong
@@ -94,7 +94,7 @@ public class OptionsServiceImpl implements OptionsService {
     }
 
     /**
-     * Getting tariff option for current contract
+     * Getting options for current contract
      *
      * @param id if for getting
      * @return list of all options for contract
@@ -107,10 +107,10 @@ public class OptionsServiceImpl implements OptionsService {
     }
 
     /**
-     * Getting joint tariff options
+     * Getting required options
      *
-     * @param id id for getting
-     * @return list of all joint options
+     * @param id for getting
+     * @return list of all required options
      * @throws OptionsForEntityNotGotException if option not found
      */
     @Override
@@ -120,9 +120,9 @@ public class OptionsServiceImpl implements OptionsService {
     }
 
     /**
-     * Getting impossible tariff options
+     * Getting exclusive tariff options
      *
-     * @param id id for getting
+     * @param id for getting
      * @return list of all impossible options
      * @throws OptionsForEntityNotGotException if option not found
      */

@@ -20,7 +20,13 @@ public class ContractDAOImpl extends GenericDAOImpl<Contract, Integer> implement
     @PersistenceContext
     private EntityManager entityManager;
 
-
+    /**
+     * Get contract by number
+     *
+     * @param phoneNumber user number
+     * @return contract with selected number
+     * @throws ContractNotFoundException if contract not found
+     */
     @Override
     public Contract getContractByNumber(String phoneNumber) throws ContractNotFoundException {
         try {
@@ -34,8 +40,8 @@ public class ContractDAOImpl extends GenericDAOImpl<Contract, Integer> implement
     /**
      * Get all contracts that user has
      *
-     * @param id id for getting
-     * @return list of all contracts for adjusted user
+     * @param id id for getting contracts
+     * @return list of all contracts for selected user
      * @throws ContractsForEntityNotGotException if contract not found
      */
     @Override
