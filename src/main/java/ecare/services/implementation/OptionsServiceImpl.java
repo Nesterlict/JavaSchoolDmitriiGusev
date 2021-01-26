@@ -9,12 +9,16 @@ import ecare.services.api.OptionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
 
 @Service("optionsService")
 public class OptionsServiceImpl implements OptionsService {
+
+    private final static Logger logger = LogManager.getLogger(OptionsServiceImpl.class);
 
     @Autowired
     private OptionsDAO optionDAO;
@@ -142,6 +146,7 @@ public class OptionsServiceImpl implements OptionsService {
         try {
             return optionDAO.getOptionsByName(tariffOption.getName()) != null ? true : false;
         } catch (IndexOutOfBoundsException e) {
+            logger.error(e);
             return false;
         }
     }

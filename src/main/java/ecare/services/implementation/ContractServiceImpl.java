@@ -10,6 +10,8 @@ import ecare.services.api.ContractService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 
@@ -17,6 +19,7 @@ import java.util.List;
 @Service("contractService")
 public class ContractServiceImpl implements ContractService {
 
+    private final static Logger logger = LogManager.getLogger(ContractServiceImpl.class);
 
     @Autowired
     private ContractDAO contractDAO;
@@ -119,8 +122,10 @@ public class ContractServiceImpl implements ContractService {
         try {
             return getContractByNumber(contract.getPhoneNumber()) != null ? true : false;
         } catch (IndexOutOfBoundsException e) {
+            logger.error(e);
             return false;
         } catch (ContractNotFoundException ex) {
+            logger.error(ex);
             return false;
         }
     }

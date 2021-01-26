@@ -9,6 +9,8 @@ import ecare.services.api.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 import java.util.List;
 
@@ -16,6 +18,7 @@ import java.util.List;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
+    private static final Logger logger = LogManager.getLogger(UserServiceImpl.class);
 
     @Autowired
     private UserDAO userDAO;
@@ -120,6 +123,7 @@ public class UserServiceImpl implements UserService {
         try {
             return getUserByEMAil(user.getEmail()) != null ? true : false;
         } catch (UserNotFoundException ex) {
+            logger.error(ex);
             return false;
         }
     }
