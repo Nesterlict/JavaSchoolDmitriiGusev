@@ -32,7 +32,7 @@ public class Contract {
         this.user = user;
     }
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "tariff_id")
     private Tariff tariff;
 

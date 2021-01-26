@@ -5,6 +5,7 @@ import ecare.config.PersistenceJPAConfig
 import ecare.services.api.ContractService
 import ecare.services.api.TariffService
 import ecare.services.api.UserService
+import org.junit.Assert
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
@@ -36,25 +37,23 @@ open class ContractTests {
         userService!!.createEntity(user1)
         userId = userService.getUserByEMAil("MDmitrieva@mail.com").userId
 
-        var tariff1 = Tariff("name",1000.toBigDecimal(),"description")
+        var tariff1 = Tariff("name", 1000.toBigDecimal(), "description")
         tariffService!!.createEntity(tariff1)
         tariffId = tariffService.getTariffByName("name").tariffId
-
-        var contract1 = Contract("579-71-39","unblocked",user1,tariff1)
-        contractService!!.createEntity(contract1)
-        contractId = contractService.getContractByNumber("579-71-39").contractID
     }
 
     @Test
     @Transactional
     open fun getEntityByIdTest(){
-        contractService!!.getEntityById(contractId)
+        Assert.assertEquals(contractService!!.getEntityById(1).phoneNumber,"6761230323")
+
     }
 
     @Test
     @Transactional
     open fun getContractByNumberTest(){
-        contractService!!.getContractByNumber("579-71-39")
+        Assert.assertEquals(contractService!!.getContractByNumber("6761230323").contractID,1)
+        contractService!!.getContractByNumber("6761230323")
     }
 
 

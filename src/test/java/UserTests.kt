@@ -1,3 +1,4 @@
+import ecare.MVC.entities.Contract
 import ecare.MVC.entities.Tariff
 import ecare.MVC.entities.User
 import ecare.config.PersistenceJPAConfig
@@ -27,7 +28,8 @@ open class UserTests {
 
     @BeforeAll
     fun init() {
-        userService!!.createEntity(User("Maria","Dmitrieva",null,"1221 100001","ulitsa","MDmitrieva@mail.com",1000.toBigDecimal(),"password","userA"))
+        var user1 = User("Maria","Dmitrieva",null,"1221 100001","ulitsa","MDmitrieva@mail.com",1000.toBigDecimal(),"password","userA")
+        userService!!.createEntity(user1)
         id = userService.getUserByEMAil("MDmitrieva@mail.com").userId}
 
     @Test
@@ -44,7 +46,7 @@ open class UserTests {
 
     @Test
     @Transactional
-    open fun get(){
+    open fun getByIdTest(){
         Assert.assertEquals(userService!!.getEntityById(id).userId,id)
     }
 

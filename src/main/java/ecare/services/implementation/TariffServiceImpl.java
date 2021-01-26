@@ -105,12 +105,12 @@ public class TariffServiceImpl implements TariffService {
     /**
      * Getting tariff entity by title
      *
-     * @param title entity for getting
+     * @param name entity for getting
      * @return tariff entity
      */
     @Override
     @Transactional
-    public Tariff getTariffByName(String title) {
-        return tariffDAO.getTariffByName(title);
+    public Tariff getTariffByName(String name) {
+        return tariffDAO.getTariffByName(name);
     }
 }

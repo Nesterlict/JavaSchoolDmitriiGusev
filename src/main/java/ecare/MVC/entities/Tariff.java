@@ -71,8 +71,7 @@ public class Tariff {
     @Override
     public String toString() {
         return "Tariff{" +
-                "tariffId=" + tariffId +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", price=" + price +
                 ", description='" + description + '\'' +
                 '}';

@@ -71,8 +71,7 @@ public class Options {
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.LAZY)
     private Set<Contract> contractUsedOptions = new HashSet<>();
 
-    public Options(int optionID, String name, BigDecimal price, BigDecimal connectionPrice,String description) {
-        this.optionID = optionID;
+    public Options(String name, BigDecimal price, BigDecimal connectionPrice,String description) {
         this.name = name;
         this.price = price;
         this.connectionPrice = connectionPrice;
@@ -173,17 +172,10 @@ public class Options {
     @Override
     public String toString() {
         return "Options{" +
-                "optionID=" + optionID +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", connectionPrice=" + connectionPrice +
-                ", description='" + description + '\'' +
-                ", requiredOptions=" + requiredOptions +
-                ", requiredOptionsM=" + requiredOptionsM +
-                ", exclusiveOptions=" + exclusiveOptions +
-                ", exclusiveOptionsM=" + exclusiveOptionsM +
-                ", tariffRelatedOptions=" + tariffRelatedOptions +
-                ", contractUsedOptions=" + contractUsedOptions +
+                ", desctiption=" + description +
                 '}';
     }
 
