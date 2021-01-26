@@ -1,9 +1,6 @@
 package ecare.exceptions;
 
-/**
- * Created by Artyom Karnov on 8/26/16.
- * artyom-karnov@yandex.ru
- **/
+
 
 /**
  * Exception for situation when option for entity  couldn't be found

@@ -12,10 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-/**
- * Created by Artyom Karnov on 8/27/16.
- * artyom-karnov@yandex.ru
- **/
+
 @Service("userService")
 public class UserServiceImpl implements UserService {
 

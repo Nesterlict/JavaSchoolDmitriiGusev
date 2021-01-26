@@ -3,10 +3,6 @@ package ecare.services.api;
 import ecare.MVC.entities.User;
 import ecare.exceptions.UserNotFoundException;
 
-/**
- * Created by Artyom Karnov on 8/27/16.
- * artyom-karnov@yandex.ru
- **/
 
 /**
  * Interface for UserService
