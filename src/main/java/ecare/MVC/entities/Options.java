@@ -9,6 +9,7 @@ import java.util.*;
  */
 @Entity
 @Table(name = "options")
+@NamedQuery(name = "Options.getAll", query = "SELECT o FROM Options o")
 public class Options {
 
     @Id

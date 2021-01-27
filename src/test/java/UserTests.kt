@@ -16,10 +16,12 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.context.ContextConfiguration
 import org.springframework.test.context.junit.jupiter.SpringExtension
+import org.springframework.test.context.web.WebAppConfiguration
 import org.springframework.transaction.annotation.Transactional
 import java.sql.Date
 import kotlin.test.assertFailsWith
 
+@WebAppConfiguration
 @ExtendWith(SpringExtension::class)
 @ContextConfiguration(classes = [PersistenceJPAConfig::class])
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)

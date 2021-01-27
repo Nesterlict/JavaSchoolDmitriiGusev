@@ -10,6 +10,7 @@ import java.util.List;
 /**
  * Interface for OptionsDAO
  */
+
 public interface OptionsDAO extends GenericDAO<Options, Integer> {
 
     /**
